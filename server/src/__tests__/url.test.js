@@ -3,16 +3,17 @@ import app from '../app';
 
 const request = require('supertest');
 
-// Test yet to be run
+// TODO: tests are currently failing and yet to be fixed
+
 describe('Test url endpoints', () => {
   const uniqueCodeMock = '82ye6etd';
-  const shortUrlMock1 = 'shorty/82ye6etd';
+  const shortUrlMock = 'shorty/82ye6etd';
   const originalUrlMock = 'https://nodejs.org/en/';
 
   beforeAll(async (done) => {
     const res = await request(app).post('/api/short').send({
       uniqueCode: uniqueCodeMock,
-      shortUrl: shortUrlMock1,
+      shortUrl: shortUrlMock,
       originalUrl: originalUrlMock,
     });
     done();
@@ -48,8 +49,8 @@ describe('Test url endpoints', () => {
 
   it('should return error when url field is empty', async (done) => {
     const res = await request(app);
-    const response = await request(app).post('/short');
-    response
+    await request(app)
+      .post('/short')
       .send({
         originalUrl: '',
       })
