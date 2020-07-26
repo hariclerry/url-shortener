@@ -1,0 +1,45 @@
+body {
+  background-color: #1d4f2b;
+  color: rgb(37, 36, 36);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main {
+  display: flex;
+  height: 100vh;
+  padding: 50px 350px 50px 350px;
+  color: rgb(248, 242, 242);
+  background-color: #1d4f2b;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(102, 113, 116, 0.8),
+      rgba(12, 18, 26, 0.8)
+    ),
+    url("../../images/evi-radauscher-unsplash.jpg");
+  background-size: cover;
+  background-position: top; 
+  position: relative;
+}
+
+.url-content h1 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.url-item {
+  margin-top: 70px;
+  color: rgb(49, 47, 47);
+}
+
+.btn {
+  min-width: 100%;
+}
+
+.url-card {
+  padding-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    padding: 70px 30px 50px 30px;
+  }
+}
